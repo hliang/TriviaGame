@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TriviaGame</title>
     <!-- normalize style -->
-    <link href="assets/css/normalize.css" rel="stylesheet">
+    <!-- <link href="assets/css/normalize.css" rel="stylesheet"> -->
     <!-- my style File -->
     <link href="assets/css/style.css" rel="stylesheet">
     <!-- JQuery -->
@@ -14,13 +14,39 @@
 </head>
 
 <body>
-    <header class="text-center">
-        <h1>Who Wants To Be A Millionaire</h1>
-    </header>
+    <!-- <div id="wrapper"> -->
+        <header class="text-center">
+            <h1>Who Wants To Be A Millionaire</h1>
+        </header>
+        <div id="gamewrapper">
+        <div id="startscreen">
+            <img src="assets/images/areyousmart.png" alt="are-you-smart">
+            <div>
+                <button id="btn-start" class="btn btn-blue">START</button>
+            </div>
+        </div>
+        <div id="timerDiv" style="display: none">
+            <div>Time Remaining: <span id="timer">0</span> Seconds</div>
+            <!-- <div id="countdown-bar-container" style="display: block">
+                <div id="countdown-bar" style="display: block"></div>
+            </div> -->
+        </div>
+        <div id="question" style="display: none"></div>
+        <div id="remark" style="display: none"></div>
+        <div id="choicesDiv" style="display: none">
+            <div class="answer"> A: <span id="answer-0"></span></div>
+            <div class="answer"> B: <span id="answer-1"></span></div>
+            <div class="answer"> C: <span id="answer-2"></span></div>
+            <div class="answer"> D: <span id="answer-3"></span></div>
+        </div>
+        </div>
+        <footer>
+            <div class="container text-center">
+                <p><a href="https://github.com/hliang/TriviaGame">source code</a></p>
+            </div>
+        </footer>
+    <!-- </div> -->
 
-    <div class="container">
-    </div>
-    
     <script src="assets/javascript/app.js"></script>
 
 </body>

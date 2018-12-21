@@ -1,4 +1,237 @@
 /* universal box-sizing */
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
+    /* border: 1px solid green; */
+    font-size: 100%;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    text-align: center;
+    background-image: url("../images/dark-paths.png");
+    background-repeat: repeat;
+    background-color: #101b3f;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+header h1 {
+    /* line-height: 40px; */
+    font-size: 40px;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+#gamewrapper {
+    flex: 1 0 auto;
+    /* display: flex; */
+    /* min-width: 600px; */
+    /* max-width: 60vw; */
+    /* text-align: center; */
+    /* margin-top: 20px; */
+    margin: 20px auto;
+    /* background: rgba(94, 73, 199, 0.2); */
+}
+
+.grad1 {
+    background: rgb(4,17,51);
+    background: linear-gradient(-90deg, rgba(4,17,51,1) 0%, rgba(82,62,182,1) 100%);
+}
+
+
+#startscreen {
+    text-align: center;
+    z-index: 2;
+}
+#startscreen img {
+    margin: 10px 10px;
+}
+
+.btn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+  
+.btn-blue {
+    background-color: rgb(37, 54, 150);
+    color: white;
+    border: 2px solid rgb(252, 252, 252);
+}
+
+.btn-blue:hover {
+    background-color: rgb(249, 177, 25); 
+    color: black; 
+    border: 2px solid white;
+     /* rgb(37, 54, 150); */
+}
+
+#btn-start {
+    min-width: 150px;
+    max-width: 30vw;
+    /* align-self: flex-end; */
+}
+
+#timerDiv, #question, #remark {
+    font-size: 200%;
+    color: white;
+    text-align: center;
+}
+
+#countdown-bar-container {
+    background: rgb(55, 148, 84);
+}
+#countdown-bar {
+    width: 100%;
+    height: 10px;
+    background: rgba(82,62,182,1);
+    padding: 0px 0px;
+}
+
+.answer {
+    background-color: black; 
+    color: orange; 
+    border: 2px solid rgb(193, 177, 240);
+    font-size: 200%;
+    font-family: sans-serif;
+    padding: 2px 2px;
+    margin: 10px auto;
+}
+.answer:hover {
+    background-color: orange; 
+    color: white; 
+    /* border: 2px solid  rgb(32, 14, 88); */
+    border: 2px solid rgb(193, 177, 240);
+}
+
+#answer-0, #answer-1, #answer-2, #answer-3 {
+    color: white;
+    width: 80%;
+    display: inline-block;
+}
+/* #answer-1:hover {
+    color: black;
+    font-size: 200%;
+} */
+#answer-0:hover, #answer-1:hover, #answer-2:hover, #answer-3:hover {
+    color: black;
+}
+
+#remark img {
+    max-width: 500px;
+    max-height: 350px;
+}
+
+#timerDiv, #question, #remark {
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* background image with opaccity */
+#gamewrapper::after {
+    background-image: url("../images/WWTBAM-Logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    content: "";
+    opacity: 0.05;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1; 
+    -webkit-transform:rotate(-20deg);
+    -moz-transform:rotate(-20deg);
+    -ms-transform:rotate(-20deg);
+    -o-transform:rotate(-20deg);
+    transform:rotate(-20deg); 
+}
+
+.bg-takemoney {
+    background-image: url("../images/takemoney.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    /* background-color: #101b3f; */
+}
+
+footer {
+    flex-shrink: 0;
+    border-top: 8px solid #11244d;
+    background-color: #101b3f;
+    height: 40px;
+    margin-top: 10px;
+}
+footer p {
+    margin-top: 2px;
+}
+footer a {
+    font-size: 12px;
+    color: rgb(145, 97, 1) ;
+}
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #gamewrapper {
+        width: 100%;
+    }
+    header h1, #timerDiv, #question, #remark {
+        font-size: 150%;
+    }
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    #gamewrapper {
+        width: 100%;
+    }
+    header h1, #timerDiv, #question, #remark {
+        font-size: 150%;
+    }
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    #gamewrapper {
+        width: 80vw;
+    }
+    header h1, #timerDiv, #question, #remark {
+        font-size: 200%;
+    }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    #gamewrapper {
+        max-width: 800px;
+    }
+    header h1, #timerDiv, #question, #remark {
+        font-size: 200%;
+    }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    #gamewrapper {
+        max-width: 800px;
+    }
+    header h1, #timerDiv, #question, #remark {
+        font-size: 200%;
+    }
 }
