@@ -34,7 +34,7 @@ header h1 {
     /* text-align: center; */
     /* margin-top: 20px; */
     margin: 20px auto;
-    /* background: rgba(94, 73, 199, 0.2); */
+    /* background: rgba(211, 196, 60, 0.783); */
 }
 
 .grad1 {
@@ -49,6 +49,13 @@ header h1 {
 }
 #startscreen img {
     margin: 10px 10px;
+}
+#startscreen p {
+    color: white;
+    font-size: 150%;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .btn {
@@ -123,17 +130,13 @@ header h1 {
     width: 80%;
     display: inline-block;
 }
-/* #answer-1:hover {
-    color: black;
-    font-size: 200%;
-} */
 #answer-0:hover, #answer-1:hover, #answer-2:hover, #answer-3:hover {
     color: black;
 }
 
 #remark img {
     max-width: 500px;
-    max-height: 350px;
+    max-height: 300px;
 }
 
 #timerDiv, #question, #remark {
@@ -212,7 +215,7 @@ footer a {
         width: 80vw;
     }
     header h1, #timerDiv, #question, #remark {
-        font-size: 200%;
+        font-size: 180%;
     }
 } 
 
@@ -222,7 +225,7 @@ footer a {
         max-width: 800px;
     }
     header h1, #timerDiv, #question, #remark {
-        font-size: 200%;
+        font-size: 180%;
     }
 } 
 
@@ -232,6 +235,6 @@ footer a {
         max-width: 800px;
     }
     header h1, #timerDiv, #question, #remark {
-        font-size: 200%;
+        font-size: 180%;
     }
 }

@@ -2,14 +2,18 @@ $(document).ready(function () {
     // question pool
     var questionPool = [
         // q: question, c: choices, ai: index of answer, remarkImg: image for remark
-        { q: "1+1=?", choices: ["123", 2, "xyz", "dunno"], ai: 1, remarkImg: "./assets/images/thumbsup.png" },
-        { q: "color of sky?", choices: ["blue", "red", "orange", "yellow"], ai: 0, remarkImg: "./assets/images/thumbsup.png" },
-        { q: "whos the president", choices: ["lady gaga", "justin biever", "donald trump", "i dont have a president"], ai: 2, remarkImg: "./assets/images/thumbsup.png" },
-        { q: "where is Ghana", choices: ["south ameria", "europe", "north pole", "africa"], ai: 3, remarkImg: "./assets/images/thumbsup.png" }
+        { q: "In the children's book series, where is Paddington Bear originally from?", choices: ["India", "Peru", "Canada", "Iceland"], ai: 1, remarkImg: "./assets/images/Paddington.jpg" },
+        { q: "On which of these might you win a large amount of money?", choices: ["National Flattery", "National Lottery", "National Battery", "National Pottery"], ai: 1, remarkImg: "./assets/images/National-lottery.jpg" },
+        { q: "What letter must appear at the beginning of the registration number of all non-military aircraft in the U.S.?", choices: ["N", "A", "U", "L"], ai: 0, remarkImg: "./assets/images/US_Registration_Closeup.jpg" },
+        { q: "Which insect shorted out an early supercomputer and inspired the term 'computer bug'?", choices: ["Moth", "Roach", "Fly", "Beetle"], ai: 0, remarkImg: "./assets/images/bug.jpg" },
+        { q: "Who'ss the president", choices: ["Lady Gaga", "Justin Bieber", "Donald Trump", "I don't have a president"], ai: 2, remarkImg: "./assets/images/president.jpg" },
+        { q: "where is Wakanda", choices: ["South Ameria", "Europe", "Africa", "No Where"], ai: 3, remarkImg: "./assets/images/wakanda.jpg" }
     ];
-    var timePerQuestion = 6; // timer allowed for each question, in seconds
+    var n = 5; // number of questions
+    questionPool = questionPool.sort(() => .5 - Math.random()).slice(0,n); // randomly sample n elements from the array
+    var timePerQuestion = 15; // timer allowed for each question, in seconds
     var timeLeft = timePerQuestion;
-    var breakAfterAnswer = 20; // the wait time between user's answer and displaying new question
+    var breakAfterAnswer = 3; // the wait time between user's answer and displaying new question
     var questionEntry = null;
     var answerTimer = 0;
     var showQuestionInterval = 0;
@@ -28,6 +32,7 @@ $(document).ready(function () {
             $("#remark").append($("<p>").text("Corect: " + answerCorrect));
             $("#remark").append($("<p>").text("Incorrect: " + answerWrong));
             $("#remark").append($("<p>").text("Unanswerd: " + answerEmtpy));
+            $("#remark").append($("<p>").text("You can take: $" + answerCorrect/n * 1000000));
             $("#gamewrapper").addClass("bg-takemoney");
             return;
         }
